@@ -32,9 +32,6 @@ public class DateDilemma {
 			}
 			String separatedString = new String(ca);
 			String[] splitString = separatedString.split(" ");
-			for(String str : splitString){
-				System.out.println(str);
-			}
 			String newDate;
 			if(splitString[0].length() == 4){
 				newDate = correctYearFirst(splitString);
@@ -45,11 +42,14 @@ public class DateDilemma {
 		}
 		
 		for(String str : output){
-			//System.out.println(str);
+			System.out.println(str);
 		}
 	}
 	
 	public static String correctYearFirst(String[] badDate){		
+		if(badDate[0].length() == 2) {
+			badDate[0] = "20" + badDate[0];
+		}
 		if(badDate[1].length() == 1){
 			badDate[1] = "0" + badDate[1];
 		}
